@@ -11,7 +11,13 @@ import taskRoutes from './routes/taskRoutes.js';
 const app = express();
 
 
-app.use(cors())
+app.use(cors({
+  origin: [
+    'https://taskmanager-frontend-k543.onrender.com', // Your frontend live URL
+    'http://localhost:3000' // Local development
+  ],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
