@@ -12,9 +12,12 @@ const app = express();
 
 
 app.use(cors({
-  origin: "https://task-manager-git-main-pankaj-kumars-projects-3ffc6756.vercel.app",
+  origin: [
+    process.env.PORT || 3000
+  ],
   credentials: true
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
